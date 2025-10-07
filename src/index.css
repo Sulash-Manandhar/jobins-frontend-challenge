@@ -1,36 +1,36 @@
 @font-face {
-  font-family: "PublicSans";
-  src: url("./assets/fonts/PublicSans-Regular(400).otf") format("opentype");
+  font-family: 'PublicSans';
+  src: url('./assets/fonts/PublicSans-Regular(400).otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "PublicSans";
-  src: url("./assets/fonts/PublicSans-Medium(500).otf") format("opentype");
+  font-family: 'PublicSans';
+  src: url('./assets/fonts/PublicSans-Medium(500).otf') format('opentype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "PublicSans";
-  src: url("./assets/fonts/PublicSans-SemiBold(600).otf") format("opentype");
+  font-family: 'PublicSans';
+  src: url('./assets/fonts/PublicSans-SemiBold(600).otf') format('opentype');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "PublicSans";
-  src: url("./assets/fonts/PublicSans-Bold(700).otf") format("opentype");
+  font-family: 'PublicSans';
+  src: url('./assets/fonts/PublicSans-Bold(700).otf') format('opentype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -115,5 +115,5 @@
 }
 
 body {
-  font-family: "PublicSans", "sans-serif";
+  font-family: 'PublicSans', 'sans-serif';
 }
