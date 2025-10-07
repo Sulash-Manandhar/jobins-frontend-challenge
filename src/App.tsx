@@ -1,10 +1,11 @@
-import { Button } from "./components/ui/button";
-
 export default function App() {
   return (
     <div>
       App
-      <Button variant="default">Click Me</Button>
+      <p className="text-2xl">Regular</p>
+      <p className="text-2xl font-medium">Medium</p>
+      <p className="text-2xl font-semibold">Semibold</p>
+      <p className="text-2xl font-bold">Bold</p>
     </div>
   );
 }
