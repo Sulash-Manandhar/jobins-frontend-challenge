@@ -30,34 +30,46 @@
 }
 
 @import 'tailwindcss';
-@import 'tw-animate-css';
 
 @theme inline {
-  --color-text: var(--text);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --color-primary: var(--primary);
   --color-muted: var(--muted);
-  --color-default: var(--default);
   --color-danger: var(--danger);
   --color-warning: var(--warning);
+  --color-gray: var(--gray);
 }
 
 :root {
-  --text: #23272e;
-  --muted: #8b909a;
+  --foreground: #23272e;
+  --background: #f5f5f5;
+  --primary: #0f60ff;
   --warning: #ffc600;
-  --default: #0f60ff;
   --danger: #ea5455;
+  --muted: #8b909a;
+  --gray: #f3f4f8;
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background;
+  }
+  * {
+    @apply text-foreground;
   }
 }
 
 body {
   font-family: 'PublicSans', 'sans-serif';
-  color: var(--text);
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

@@ -1,9 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router';
 
-export const Route = createFileRoute('/')({
+export const Route = createFileRoute('/product-list')({
   component: RouteComponent,
 });
 
 function RouteComponent() {
-  return <div className="flex flex-col gap-8">Home page</div>;
+  return <div>Hello "/product-list"!</div>;
 }

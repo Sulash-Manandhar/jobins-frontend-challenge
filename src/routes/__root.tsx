@@ -1,15 +1,21 @@
-import * as React from 'react'
-import { Outlet, createRootRoute } from '@tanstack/react-router'
+import AppSidebar from '@/components/common/AppSidebar';
+import { useAppSidebar } from '@/components/context/AppSidebarProvider';
+import { Outlet, createRootRoute } from '@tanstack/react-router';
 
 export const Route = createRootRoute({
   component: RootComponent,
-})
+});
 
 function RootComponent() {
+  const { isOpen } = useAppSidebar();
   return (
-    <React.Fragment>
-      <div>Hello "__root"!</div>
-      <Outlet />
-    </React.Fragment>
-  )
+    <main
+      className={`grid grid-cols-[260px_1fr] overflow-hidden gap-6.5   ${isOpen ? 'grid-cols-[260px_1fr]' : 'grid-cols-[auto_1fr]'}`}
+    >
+      <AppSidebar />
+      <section className="p-3">
+        <Outlet />
+      </section>
+    </main>
+  );
 }
