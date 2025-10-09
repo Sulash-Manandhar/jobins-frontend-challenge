@@ -1,6 +1,6 @@
-import { logo, menu } from '@/assets/images';
+import { logo } from '@/assets/images';
 import { Link, useLocation } from '@tanstack/react-router';
-import { TbSmartHome, TbShoppingCart, TbStar, TbCirclePlus, TbBox } from 'react-icons/tb';
+import { TbSmartHome, TbShoppingCart, TbStar, TbCirclePlus, TbBox, TbMenu2 } from 'react-icons/tb';
 import { useAppSidebar } from '../context/AppSidebarProvider';
 import Button from '../ui/button';
 
@@ -48,7 +48,12 @@ export default function AppSidebar() {
 
   return (
     <aside className="w-full bg-white h-dvh">
-      <div className="flex flex-row items-center justify-between p-4 ">
+      <div className={`flex items-center justify-between p-4  ${isOpen ? 'flex-row' : 'flex-col gap-4'}`}>
+        {!isOpen && (
+          <Link to="/" aria-label="JoBin's Dashboard" className="flex flex-row gap-2.5 items-center">
+            <img src={logo} alt="JoBin's logo" className="w-8 h-7" />
+          </Link>
+        )}
         {isOpen && (
           <header>
             <Link to="/" aria-label="JoBin's Dashboard" className="flex flex-row gap-2.5 items-center">
@@ -63,9 +68,9 @@ export default function AppSidebar() {
           aria-label="Toggle sidebar"
           aria-expanded={isOpen}
           onClick={toggle}
-          className="ml-2 cursor-pointer"
+          className={` cursor-pointer transition-all duration-300 ${isOpen && 'ml-2'}`}
         >
-          <img src={menu} alt="Toggle sidebar" className="w-6 h-6" />
+          <TbMenu2 size={24} className="stroke-muted" />
         </Button>
       </div>
       <nav className="px-3.5">
