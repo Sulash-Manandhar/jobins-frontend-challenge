@@ -41,6 +41,7 @@
   --color-gray: var(--gray);
   --color-purple: var(--purple);
   --color-green: var(--green);
+  --color-border: var(--border);
 }
 
 :root {
@@ -53,6 +54,7 @@
   --gray: #f3f4f8;
   --purple: #7367f0;
   --green: #28c76f;
+  --border: #dbdade;
 }
 
 @layer base {

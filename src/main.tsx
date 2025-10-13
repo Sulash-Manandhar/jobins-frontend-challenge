@@ -5,6 +5,7 @@ import './index.css';
 import { routeTree } from './routeTree.gen.ts';
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
 import AppSidebarProvider from './components/context/AppSidebarProvider.tsx';
+import OrderTabsProvider from './components/context/OrderTabsProvider.tsx';
 
 const router = createRouter({ routeTree });
 
@@ -17,7 +18,9 @@ declare module '@tanstack/react-router' {
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <AppSidebarProvider>
-      <RouterProvider router={router} />
+      <OrderTabsProvider>
+        <RouterProvider router={router} />
+      </OrderTabsProvider>
     </AppSidebarProvider>
     <TanStackRouterDevtools router={router} initialIsOpen={false} />
   </StrictMode>

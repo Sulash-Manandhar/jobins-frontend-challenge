@@ -1,6 +1,7 @@
 import GlobalDistributionStats from '@/components/home/GlobalDistributionStats';
 import TotalProfitChart from '@/components/home/TotalProfitChart';
 import TotalSalesAndCostsStats from '@/components/home/TotalSalesAndCostsStats';
+import UserProfile from '@/components/home/UserProfile';
 import Button from '@/components/ui/button';
 import { createFileRoute } from '@tanstack/react-router';
 import { TbBell } from 'react-icons/tb';
@@ -28,10 +29,13 @@ function RouteComponent() {
         </div>
       </div>
 
-      <section className="grid grid-cols-[400px_250px_460px] gap-3">
+      <section className="grid grid-cols-[400px_250px_auto] gap-3">
         <TotalSalesAndCostsStats />
         <TotalProfitChart />
         <GlobalDistributionStats />
+      </section>
+      <section>
+        <UserProfile />
       </section>
     </div>
   );

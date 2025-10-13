@@ -10,10 +10,10 @@ function RootComponent() {
   const { isOpen } = useAppSidebar();
   return (
     <main
-      className={`grid grid-cols-[260px_1fr] overflow-hidden gap-6.5   ${isOpen ? 'grid-cols-[260px_1fr]' : 'grid-cols-[auto_1fr]'}`}
+      className={`grid grid-cols-[260px_1fr] overflow-hidden  ${isOpen ? 'grid-cols-[260px_1fr]' : 'grid-cols-[auto_1fr]'}`}
     >
       <AppSidebar />
-      <section className="p-3">
+      <section className="py-3 px-6.5 overflow-y-scroll overflow-x-hidden">
         <Outlet />
       </section>
     </main>
