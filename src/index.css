@@ -39,6 +39,8 @@
   --color-danger: var(--danger);
   --color-warning: var(--warning);
   --color-gray: var(--gray);
+  --color-purple: var(--purple);
+  --color-green: var(--green);
 }
 
 :root {
@@ -49,6 +51,8 @@
   --danger: #ea5455;
   --muted: #8b909a;
   --gray: #f3f4f8;
+  --purple: #7367f0;
+  --green: #28c76f;
 }
 
 @layer base {
