@@ -1,6 +1,7 @@
 import GlobalDistributionStats from '@/components/home/GlobalDistributionStats';
 import TotalProfitChart from '@/components/home/TotalProfitChart';
 import TotalSalesAndCostsStats from '@/components/home/TotalSalesAndCostsStats';
+import UserOrderTable from '@/components/home/UserOrderTable';
 import UserProfile from '@/components/home/UserProfile';
 import Button from '@/components/ui/button';
 import { createFileRoute } from '@tanstack/react-router';
@@ -36,6 +37,9 @@ function RouteComponent() {
       </section>
       <section>
         <UserProfile />
+      </section>
+      <section>
+        <UserOrderTable />
       </section>
     </div>
   );

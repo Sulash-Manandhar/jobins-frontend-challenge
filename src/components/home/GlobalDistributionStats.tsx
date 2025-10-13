@@ -59,7 +59,7 @@ function GlobalDistributionStatsItem({ item }: GlobalDistributionStatsItemProps)
         className={` flex items-center font-semibold gap-1 text-sm ${isIncrement ? 'text-green' : 'text-danger'}`}
         aria-label={`${isIncrement ? 'Increased' : 'Decreased'} by ${absValue}%`}
       >
-        <Item size={16} className={isIncrement ? 'text-green' : 'text-danger'} />
+        <Item size={16} className={isIncrement ? 'fill-green' : 'fill-danger'} />
         {absValue}%
       </span>
     </li>
