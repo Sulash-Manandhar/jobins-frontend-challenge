@@ -1,6 +1,6 @@
 import { useOrderListQuery } from '@/hooks/query/order';
 import type { LinkObject, Order, OrderParams } from '@/lib/types';
-import { cn, formatDate, getStatus, mapTabs } from '@/lib/utils';
+import { cn, formatDate, getStatus, getTotalPages, mapTabs } from '@/lib/utils';
 import type { UseQueryResult } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
 import { useOrderTabsContext } from '../context/OrderTabsProvider';
@@ -8,6 +8,8 @@ import Button from '../ui/button';
 import Card from '../ui/Card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../ui/Table';
 import UserOrderFilterBar from './UserOrderFilterBar';
+import Pagination from '../ui/Pagination';
+import { DEFAULT_LIMIT, DEFAULT_PAGE } from '@/lib/constant';
 type RenderTableBodyProps = {
   data: UseQueryResult<
     {
@@ -70,8 +72,8 @@ export default function UserOrderTable() {
   const { activeTab } = useOrderTabsContext();
 
   const [filterParams, setFilterParams] = useState<OrderParams>({
-    _page: 1,
-    _limit: 8,
+    _page: DEFAULT_PAGE,
+    _limit: DEFAULT_LIMIT,
     status: mapTabs(activeTab),
   });
 
@@ -81,11 +83,20 @@ export default function UserOrderTable() {
 
   const queryData = useOrderListQuery(filterParams);
 
+  const setPage = (page: number) => {
+    setFilterParams((prev) => ({
+      ...prev,
+      _page: page,
+    }));
+  };
+
+  const totalPages = getTotalPages(queryData?.data?.meta?.total, filterParams._limit);
+
   return (
     <div className="flex flex-col gap-5.5">
       <UserOrderFilterBar filterParams={filterParams} setFilterParams={setFilterParams} />
 
-      <Card className="flex items-start justify-start w-full p-0 rounded-2xl ">
+      <Card className="flex flex-col items-start justify-start w-full p-0 rounded-2xl rounded-b-none ">
         <Table className="w-full">
           <TableHeader>
             <TableRow>
@@ -102,6 +113,9 @@ export default function UserOrderTable() {
             <RenderTableBody data={queryData} />
           </TableBody>
         </Table>
+        <div className="bg-white p-2 rounded-2xl rounded-t-none w-full  shadow-sm px-6 py-4 flex items-center justify-between">
+          <Pagination totalPage={totalPages} initialPage={filterParams._page} setPage={setPage} />
+        </div>
       </Card>
     </div>
   );

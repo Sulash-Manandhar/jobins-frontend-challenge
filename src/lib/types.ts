@@ -9,13 +9,13 @@ export type Order = {
   status: OrderStatus;
 };
 
-export type DefaultParams = Partial<{
+export type DefaultParams = {
   _limit: number;
   _page: number;
-  _start: number;
-  _end: number;
+  _start?: number;
+  _end?: number;
   q?: string;
-}>;
+};
 
 export type WithDefaultParams<T> = T & DefaultParams;
 

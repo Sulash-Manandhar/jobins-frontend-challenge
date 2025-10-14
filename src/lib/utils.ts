@@ -2,6 +2,7 @@ import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import type { LinkObject, OrderStatus } from './types';
 import type { TabsType } from '@/components/context/OrderTabsProvider';
+import { DEFAULT_LIMIT, DEFAULT_PAGE } from './constant';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -61,4 +62,8 @@ export function formatDate(date: string | null) {
     month: 'short',
     year: 'numeric',
   });
+}
+
+export function getTotalPages(totalCount: number = DEFAULT_PAGE, limit: number = DEFAULT_LIMIT) {
+  return Math.ceil(totalCount / limit);
 }
