@@ -48,8 +48,8 @@ function RenderTableBody({ data: queryData }: RenderTableBodyProps) {
 
   return (
     <>
-      {data.data.map((item) => (
-        <TableRow key={item.id}>
+      {data.data.map((item, index) => (
+        <TableRow key={item.id} index={index}>
           <TableCell>#{item.id}</TableCell>
           <TableCell>{item.customer}</TableCell>
           <TableCell>{formatDate(item.date)}</TableCell>

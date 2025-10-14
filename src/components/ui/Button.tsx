@@ -1,5 +1,6 @@
 import { cn } from '@/lib/utils';
 import React, { forwardRef } from 'react';
+import { motion } from 'framer-motion';
 
 type Variant = 'default' | 'ghost' | 'link';
 type Size = 'default' | 'sm' | 'lg' | 'icon';
@@ -27,13 +28,20 @@ const sizes: Record<Size, string> = {
 };
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ variant = 'default', size = 'default', children, className, ...rest }, ref) => {
+  ({ variant = 'default', size = 'default', children, className, onClick }, ref) => {
     const combineClass = `${baseStyles} ${variants[variant]} ${sizes[size]}`;
 
     return (
-      <button ref={ref} className={cn(combineClass, className)} {...rest}>
+      <motion.button
+        ref={ref}
+        type="button"
+        whileHover={{ scale: 1.03 }}
+        whileTap={{ scale: 0.97 }}
+        className={cn(combineClass, className)}
+        onClick={onClick}
+      >
         {children}
-      </button>
+      </motion.button>
     );
   }
 );
