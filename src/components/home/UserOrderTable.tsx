@@ -10,6 +10,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '.
 import UserOrderFilterBar from './UserOrderFilterBar';
 import Pagination from '../ui/Pagination';
 import { DEFAULT_LIMIT, DEFAULT_PAGE } from '@/lib/constant';
+import PageLimit from '../ui/PageLimit';
 type RenderTableBodyProps = {
   data: UseQueryResult<
     {
@@ -114,6 +115,11 @@ export default function UserOrderTable() {
           </TableBody>
         </Table>
         <div className="bg-white p-2 rounded-2xl rounded-t-none w-full  shadow-sm px-6 py-4 flex items-center justify-between">
+          <PageLimit
+            filterParams={filterParams}
+            setFilterParams={setFilterParams}
+            totalCount={queryData?.data?.meta?.total}
+          />
           <Pagination totalPage={totalPages} initialPage={filterParams._page} setPage={setPage} />
         </div>
       </Card>
