@@ -90,9 +90,10 @@ export default function AppSidebar() {
                     key={menu.title}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 1, ease: 'easeOut' }}
+                    transition={{ duration: 0.5, ease: 'easeOut' }}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
+                    className="truncate"
                   >
                     <Link
                       to={menu.href}
@@ -111,7 +112,7 @@ export default function AppSidebar() {
                             initial={{ opacity: 0, width: 0 }}
                             animate={{ opacity: 1, width: 'auto' }}
                             exit={{ opacity: 0, width: 0 }}
-                            transition={{ duration: 0.3 }}
+                            transition={{ duration: 0.5 }}
                             className={`text-sm capitalize font-normal ${isCurrentPage ? 'text-foreground' : 'text-muted'}`}
                           >
                             {menu.title}
