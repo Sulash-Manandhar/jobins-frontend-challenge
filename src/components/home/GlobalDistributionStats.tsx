@@ -34,16 +34,16 @@ function GlobalDistributionStatsItem({ item }: GlobalDistributionStatsItemProps)
   const absValue = Math.abs(item.changedBy);
 
   return (
-    <li className="grid grid-cols-[1fr_4fr_auto] gap-4 items-center">
-      <div className="flex flex-row gap-2 items-center">
+    <li className="grid grid-cols-2 sm:grid-cols-[1fr_4fr_auto] gap-4 items-center">
+      <div className="flex flex-row gap-2 items-center w-[90px]">
         <img src={item.image} alt={`${item.name} globe`} className="size-8.5" />
         <div className="flex flex-col">
           <span className="font-semibold text-sm">{item.user}</span>
           <h4 className="text-xs text-muted">{item.name} </h4>
         </div>
       </div>
-      <div className="overflow-hidden">
-        <div className="h-1.5 w-full overflow-hidden rounded-full bg-[#E9E7FD]">
+      <div className="overflow-hidden hidden sm:block">
+        <div className="h-1.5 lg:w-[200px] xl:w-full overflow-hidden rounded-full bg-[#E9E7FD]">
           <div
             className="h-full bg-primary"
             style={{ width: `${absValue * 2}%` }}

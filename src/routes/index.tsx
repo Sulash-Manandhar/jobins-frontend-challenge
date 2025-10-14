@@ -30,7 +30,7 @@ function RouteComponent() {
         </div>
       </div>
 
-      <section className="grid grid-cols-1  lg:grid-cols-[400px_250px_auto] gap-3">
+      <section className="grid grid-cols-1   lg:grid-cols-[310px_220px_auto] xl:grid-cols-[450px_250px_auto]  gap-3">
         <TotalSalesAndCostsStats />
         <TotalProfitChart />
         <GlobalDistributionStats />
