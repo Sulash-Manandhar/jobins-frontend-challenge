@@ -4,6 +4,7 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import tseslint from 'typescript-eslint';
 import { defineConfig, globalIgnores } from 'eslint/config';
+import pluginQuery from '@tanstack/eslint-plugin-query';
 
 export default defineConfig([
   globalIgnores(['dist']),
@@ -21,6 +22,10 @@ export default defineConfig([
     },
     rules: {
       'react-refresh/only-export-components': 'off',
+      '@tanstack/query/exhaustive-deps': 'error',
+    },
+    plugins: {
+      '@tanstack/query': pluginQuery,
     },
   },
 ]);
