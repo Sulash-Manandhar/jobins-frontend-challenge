@@ -25,8 +25,18 @@ const TableRow = ({ children, className }: PropsWithChildren) => {
   return <tr className={cn('border-b border-border', className)}>{children}</tr>;
 };
 
-const TableCell = ({ children, className }: PropsWithChildren) => {
-  return <td className={cn('py-4.5 px-5 text-sm', className)}>{children}</td>;
+const TableCell = ({
+  children,
+  className,
+  colSpan,
+}: PropsWithChildren<{
+  colSpan?: number;
+}>) => {
+  return (
+    <td colSpan={colSpan} className={cn('py-4.5 px-5 text-sm', className)}>
+      {children}
+    </td>
+  );
 };
 
 export { Table, TableHeader, TableHead, TableBody, TableRow, TableCell };

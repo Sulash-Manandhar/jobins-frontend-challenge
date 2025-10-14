@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from 'react';
 
-type TabsType = 'all orders' | 'completed' | 'canceled';
+export type TabsType = 'all orders' | 'completed' | 'canceled' | 'pending';
 const TABS: TabsType[] = ['all orders', 'completed', 'canceled'];
 
 type OrderTabsContextProps = {

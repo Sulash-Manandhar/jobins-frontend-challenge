@@ -64,7 +64,7 @@ export default function UserProfile() {
             key={item}
             variant="ghost"
             onClick={() => onTabChange(item)}
-            className={`rounded-b-none px-6 py-4 text-xs capitalize transition-all duration-300  ${activeTab === item ? 'border-b-2 border-primary text-primary' : 'text-muted'} `}
+            className={`rounded-b-none px-6 py-4 text-xs capitalize transition-all duration-100 focus:ring-0 focus:ring-offset-0  ${activeTab === item ? 'border-b-2 border-primary text-primary' : 'text-muted'} `}
           >
             {item}
           </Button>
