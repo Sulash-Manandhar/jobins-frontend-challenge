@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 type Variant = 'default' | 'ghost' | 'link';
 type Size = 'default' | 'sm' | 'lg' | 'icon';
@@ -26,15 +26,16 @@ const sizes: Record<Size, string> = {
   icon: 'p-2',
 };
 
-const Button: React.FC<ButtonProps> = ({ variant = 'default', size = 'default', children, ...props }) => {
-  const { className, ...rest } = props;
-  const combineClass = `${baseStyles} ${variants[variant]} ${sizes[size]}`;
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ variant = 'default', size = 'default', children, className, ...rest }, ref) => {
+    const combineClass = `${baseStyles} ${variants[variant]} ${sizes[size]}`;
 
-  return (
-    <button className={cn(combineClass, className)} {...rest}>
-      {children}
-    </button>
-  );
-};
+    return (
+      <button ref={ref} className={cn(combineClass, className)} {...rest}>
+        {children}
+      </button>
+    );
+  }
+);
 
 export default Button;

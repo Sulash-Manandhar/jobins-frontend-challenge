@@ -3,6 +3,7 @@ import React, { type Dispatch, type SetStateAction } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { useOrderTabsContext, type TabsType } from '../context/OrderTabsProvider';
 import { debounce } from '@/lib/utils';
+import DateRangePicker from '../ui/DateRangePicker';
 
 type Props = {
   filterParams: OrderParams;
@@ -67,7 +68,7 @@ export default function UserOrderFilterBar({ filterParams, setFilterParams }: Pr
           />
         </div>
       </div>
-      <input type="date" id="date" />
+      <DateRangePicker />
     </div>
   );
 }
