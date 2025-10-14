@@ -23,6 +23,8 @@ export type OrderParams = Partial<
   WithDefaultParams<{
     name_like?: string;
     status?: OrderStatus;
+    date_gte?: string;
+    date_lte?: string;
   }>
 >;
 

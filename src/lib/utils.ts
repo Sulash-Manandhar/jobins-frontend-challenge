@@ -52,3 +52,13 @@ export function debounce(func: (value: string) => void, wait: number) {
     timeout = setTimeout(() => func(value), wait);
   };
 }
+
+export function formatDate(date: string | null) {
+  if (!date) return '-';
+  const newDate = new Date(date);
+  return newDate.toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+  });
+}

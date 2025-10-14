@@ -68,7 +68,7 @@ export default function UserOrderFilterBar({ filterParams, setFilterParams }: Pr
           />
         </div>
       </div>
-      <DateRangePicker />
+      <DateRangePicker setFilterParams={setFilterParams} />
     </div>
   );
 }

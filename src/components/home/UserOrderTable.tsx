@@ -1,6 +1,6 @@
 import { useOrderListQuery } from '@/hooks/query/order';
 import type { LinkObject, Order, OrderParams } from '@/lib/types';
-import { cn, getStatus, mapTabs } from '@/lib/utils';
+import { cn, formatDate, getStatus, mapTabs } from '@/lib/utils';
 import type { UseQueryResult } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
 import { useOrderTabsContext } from '../context/OrderTabsProvider';
@@ -49,7 +49,7 @@ function RenderTableBody({ data: queryData }: RenderTableBodyProps) {
         <TableRow key={item.id}>
           <TableCell>#{item.id}</TableCell>
           <TableCell>{item.customer}</TableCell>
-          <TableCell>{item.date}</TableCell>
+          <TableCell>{formatDate(item.date)}</TableCell>
           <TableCell>{item.total}</TableCell>
           <TableCell>{item.method}</TableCell>
           <TableCell className={cn('font-semibold text-warning capitalize', getStatus(item.status))}>

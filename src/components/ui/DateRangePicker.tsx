@@ -1,9 +1,10 @@
 import { cn } from '@/lib/utils';
-import { forwardRef, useState } from 'react';
+import { forwardRef, useState, type Dispatch, type SetStateAction } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
 import Button from './button';
+import type { OrderParams } from '@/lib/types';
 
 type ExampleCustomInputProps = {
   className?: string;
@@ -30,14 +31,30 @@ const ExampleCustomInput = forwardRef<HTMLButtonElement, ExampleCustomInputProps
   )
 );
 
-export default function DateRangePicker() {
-  const [startDate, setStartDate] = useState<Date | null>(null);
+type Props = {
+  setFilterParams: Dispatch<SetStateAction<OrderParams>>;
+};
+
+export default function DateRangePicker({ setFilterParams }: Props) {
+  const [startDate, setStartDate] = useState<Date | null>();
   const [endDate, setEndDate] = useState<Date | null>(null);
 
   const onChange = (dates: [Date | null, Date | null]) => {
     const [start, end] = dates;
     setStartDate(start);
     setEndDate(end);
+
+    const hasBothField = start && end;
+
+    const newFilterParams = {
+      date_gte: hasBothField ? start?.toISOString() : undefined,
+      date_lte: hasBothField ? end?.toISOString() : undefined,
+    };
+    setFilterParams((prev) => ({
+      ...prev,
+      date_gte: newFilterParams.date_gte,
+      date_lte: newFilterParams.date_lte,
+    }));
   };
 
   return (
@@ -57,6 +74,7 @@ export default function DateRangePicker() {
         customInput={
           <ExampleCustomInput className="flex flex-row items-center w-full bg-white py-2 px-4 rounded-sm text-sm font-normal" />
         }
+        monthsShown={2}
       />
     </div>
   );
