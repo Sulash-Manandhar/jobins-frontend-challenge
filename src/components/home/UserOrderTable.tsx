@@ -4,7 +4,7 @@ import { cn, formatCurrency, formatDate, getStatus, getTotalPages, mapTabs } fro
 import type { UseQueryResult } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
 import { useOrderTabsContext } from '../context/OrderTabsProvider';
-import Button from '../ui/button';
+import Button from '../ui/Button';
 import Card from '../ui/Card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../ui/Table';
 import UserOrderFilterBar from './UserOrderFilterBar';

@@ -2,7 +2,8 @@ import { logo } from '@/assets/images';
 import { Link, useLocation } from '@tanstack/react-router';
 import { TbSmartHome, TbShoppingCart, TbStar, TbCirclePlus, TbBox, TbMenu2 } from 'react-icons/tb';
 import { useAppSidebar } from '../context/AppSidebarProvider';
-import Button from '../ui/button';
+import Button from '@/components/ui/Button';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const NAVIGATION_ITEM = [
   {
@@ -47,7 +48,9 @@ export default function AppSidebar() {
   const { pathname } = useLocation();
 
   return (
-    <aside className="w-full bg-white h-dvh">
+    <aside
+      className={`fixed top-0 left-0 z-30 bg-white h-dvh transition-all duration-300 transform translate-x ${isOpen ? 'w-[260px]' : 'w-[80px]'}`}
+    >
       <div className={`flex items-center justify-between p-4  ${isOpen ? 'flex-row' : 'flex-col gap-4'}`}>
         {!isOpen && (
           <Link to="/" aria-label="JoBin's Dashboard" className="flex flex-row gap-2.5 items-center">
@@ -83,7 +86,14 @@ export default function AppSidebar() {
                 const isCurrentPage = pathname === menu.href;
 
                 return (
-                  <li key={menu.title}>
+                  <motion.li
+                    key={menu.title}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1, ease: 'easeOut' }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
                     <Link
                       to={menu.href}
                       aria-current={isCurrentPage ? 'page' : undefined}
@@ -95,15 +105,21 @@ export default function AppSidebar() {
                         aria-hidden="true"
                         className={`flex-shrink-0 ${isCurrentPage ? 'stroke-foreground' : 'stroke-muted'}`}
                       />
-                      {isOpen && (
-                        <span
-                          className={`text-sm capitalize font-normal ${isCurrentPage ? 'text-foreground' : 'text-muted'}`}
-                        >
-                          {menu.title}
-                        </span>
-                      )}
+                      <AnimatePresence>
+                        {isOpen && (
+                          <motion.span
+                            initial={{ opacity: 0, width: 0 }}
+                            animate={{ opacity: 1, width: 'auto' }}
+                            exit={{ opacity: 0, width: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className={`text-sm capitalize font-normal ${isCurrentPage ? 'text-foreground' : 'text-muted'}`}
+                          >
+                            {menu.title}
+                          </motion.span>
+                        )}
+                      </AnimatePresence>
                     </Link>
-                  </li>
+                  </motion.li>
                 );
               })}
             </ul>

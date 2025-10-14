@@ -1,5 +1,7 @@
 import AppSidebar from '@/components/common/AppSidebar';
 import { useAppSidebar } from '@/components/context/AppSidebarProvider';
+import { useIsMobile } from '@/hooks/use-mobile';
+import { cn } from '@/lib/utils';
 import { Outlet, createRootRoute } from '@tanstack/react-router';
 import { motion } from 'framer-motion';
 
@@ -13,20 +15,35 @@ const pageVariants = {
   exit: { opacity: 0, x: 10 },
 };
 
+const renderCss = (isOpen: boolean, isMobile: boolean) => {
+  if (isOpen && isMobile) {
+    return 'ml-auto';
+  }
+  if (isOpen) {
+    return 'ml-[260px]';
+  }
+  if (!isOpen) {
+    return 'ml-[80px]';
+  }
+};
+
 function RootComponent() {
   const { isOpen } = useAppSidebar();
+  const isMobile = useIsMobile();
+
   return (
-    <main
-      className={`h-dvh grid grid-cols-[260px_1fr] overflow-hidden  ${isOpen ? 'grid-cols-[260px_1fr]' : 'grid-cols-[auto_1fr]'}`}
-    >
+    <main className="relative h-dvh">
       <AppSidebar />
+      {isOpen && isMobile && (
+        <div className="fixed pointer-events-none top-0 left-0 w-dvw h-dvh bg-black/30 z-20"></div>
+      )}
       <motion.section
         initial="initial"
         animate="animate"
         exit="exit"
         variants={pageVariants}
         transition={{ duration: 2 }}
-        className="px-2 py-3 lg:px-6.5  overflow-scroll"
+        className={cn('px-2 py-3 lg:px-6.5 overflow-scroll z-10', renderCss(isOpen, isMobile))}
       >
         <Outlet />
       </motion.section>

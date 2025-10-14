@@ -1,5 +1,5 @@
 import { useOrderTabsContext } from '../context/OrderTabsProvider';
-import Button from '../ui/button';
+import Button from '@/components/ui/Button';
 import Card from '../ui/Card';
 
 const USER_ORDER_STATS = [
@@ -64,7 +64,7 @@ export default function UserProfile() {
             key={item}
             variant="ghost"
             onClick={() => onTabChange(item)}
-            className={`w-15  sm:w-auto rounded-b-none lg:px-6 lg:py-4 text-xs capitalize transition-all duration-100 focus:ring-0 focus:ring-offset-0  ${activeTab === item ? 'border-b-2 border-primary text-primary' : 'text-muted'} `}
+            className={`w-15  sm:w-auto rounded-b-none lg:px-6 lg:py-4 text-xs md:text-sm capitalize transition-all duration-100 focus:ring-0 focus:ring-offset-0  ${activeTab === item ? 'border-b-2 border-primary text-primary' : 'text-muted'} `}
           >
             {item}
           </Button>
