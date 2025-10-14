@@ -26,7 +26,7 @@ const ExampleCustomInput = forwardRef<HTMLButtonElement, ExampleCustomInputProps
       {value ? (
         value
       ) : (
-        <span className="flex items-center gap-2 text-muted">
+        <span className="flex w-full lg:items-center gap-2 text-muted">
           Filter by date range <MdOutlineKeyboardArrowDown size={16} className="stroke-muted" />
         </span>
       )}
@@ -73,11 +73,10 @@ export default function DateRangePicker({ setFilterParams }: Props) {
         endDate={endDate}
         placeholderText="Filter by date range  &#8595;"
         className="text-muted text-sm focus:ring-0 focus:ring-offset-0 w-full py-2 px-4"
-        popperPlacement="left"
         customInput={
           <ExampleCustomInput className="flex flex-row items-center w-full bg-white py-2 px-4 rounded-sm text-sm font-normal" />
         }
-        monthsShown={2}
+        monthsShown={1}
       />
     </div>
   );

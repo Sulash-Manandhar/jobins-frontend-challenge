@@ -58,7 +58,7 @@ export default function UserProfile() {
           </article>
         </section>
       </div>
-      <div className="flex flex-row gap-2">
+      <div className="flex flex-row gap-2 w-full">
         {tabs.map((item) => (
           <Button
             key={item}
