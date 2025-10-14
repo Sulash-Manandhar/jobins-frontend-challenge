@@ -4,7 +4,7 @@ export type Order = {
   id: number;
   customer: string;
   date: string;
-  total: string;
+  total: number;
   method: 'CC' | 'PayPal' | 'Bank';
   status: OrderStatus;
 };

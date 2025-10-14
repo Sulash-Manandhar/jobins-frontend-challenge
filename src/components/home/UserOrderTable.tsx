@@ -1,6 +1,6 @@
 import { useOrderListQuery } from '@/hooks/query/order';
 import type { LinkObject, Order, OrderParams } from '@/lib/types';
-import { cn, formatDate, getStatus, getTotalPages, mapTabs } from '@/lib/utils';
+import { cn, formatCurrency, formatDate, getStatus, getTotalPages, mapTabs } from '@/lib/utils';
 import type { UseQueryResult } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
 import { useOrderTabsContext } from '../context/OrderTabsProvider';
@@ -53,7 +53,7 @@ function RenderTableBody({ data: queryData }: RenderTableBodyProps) {
           <TableCell>#{item.id}</TableCell>
           <TableCell>{item.customer}</TableCell>
           <TableCell>{formatDate(item.date)}</TableCell>
-          <TableCell>{item.total}</TableCell>
+          <TableCell>{formatCurrency(item.total)}</TableCell>
           <TableCell>{item.method}</TableCell>
           <TableCell className={cn('font-semibold text-warning capitalize', getStatus(item.status))}>
             {item.status}

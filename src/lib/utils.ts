@@ -18,6 +18,16 @@ export function parseLinkHeader(header: string): LinkObject {
   }, {} as LinkObject);
 }
 
+export function formatCurrency(amount: number) {
+  if (isNaN(amount)) {
+    return '-';
+  }
+  return amount.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  });
+}
+
 export function mapTabs(activeTab: TabsType): OrderStatus | undefined {
   switch (activeTab) {
     case 'all orders':

@@ -1,75 +1,96 @@
-# React + TypeScript + Vite
+# Jobins Frontend Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React dashboard application built with React 19, TypeScript, Vite, and TanStack Router.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Dashboard Overview**: View sales statistics, profit charts, and global distribution data
+- **Order Management**: Track and manage orders with filtering and pagination
+- **User Profile**: Display user information and order statistics
+- **Product Management**: Browse and manage product listings
+- **Responsive Design**: Built with Tailwind CSS for a responsive UI
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- **React 19**: Latest version of React with improved performance
+- **TypeScript**: For type safety and better developer experience
+- **Vite**: Fast build tool and development server
+- **TanStack Router**: Type-safe routing for React applications
+- **TanStack Query**: Data fetching and state management
+- **Tailwind CSS**: Utility-first CSS framework
+- **JSON Server**: Mock backend API for development
 
-Note: This will impact Vite dev & build performances.
+## Getting Started
 
-## Expanding the ESLint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Node.js (latest LTS version recommended)
+- pnpm package manager
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. Clone the repository
+2. Install dependencies:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```bash
+pnpm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+3. Create a `.env` file based on `.env.sample`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
+### Development
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+Run the development server and JSON server concurrently:
+
+```bash
+pnpm dev
 ```
+
+This will start:
+
+- Vite dev server at http://localhost:5173
+- JSON Server at http://localhost:3000
+
+### Build
+
+```bash
+pnpm build
+```
+
+### Linting and Formatting
+
+```bash
+# Run ESLint
+pnpm lint
+
+# Format code with Prettier
+pnpm format
+```
+
+## Project Structure
+
+- `/src`: Source code
+  - `/assets`: Static assets (images, fonts)
+  - `/components`: React components
+    - `/common`: Shared components
+    - `/context`: React context providers
+    - `/home`: Dashboard components
+    - `/ui`: UI components (buttons, cards, etc.)
+  - `/hooks`: Custom React hooks
+  - `/lib`: Utilities, types, and constants
+  - `/routes`: Application routes
+- `/server`: Mock API server
+  - `db.json`: Database for JSON Server
+  - `routes.json`: API route configuration
+
+## Routes
+
+- `/`: Dashboard
+- `/order-management`: Order management page
+- `/brand`: Brand management
+- `/all-products`: All products listing
+- `/product-list`: Product list management
+
+## License
+
+This project is licensed under the MIT License.
