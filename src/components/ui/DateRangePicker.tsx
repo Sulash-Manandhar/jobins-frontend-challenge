@@ -16,7 +16,10 @@ const ExampleCustomInput = forwardRef<HTMLButtonElement, ExampleCustomInputProps
   ({ value, onClick, className }, ref) => (
     <Button
       variant="ghost"
-      className={cn('flex flex-row items-center w-full bg-white py-2 px-4 rounded-sm text-sm font-normal', className)}
+      className={cn(
+        'flex flex-row items-center w-full md:min-w-[200px] bg-white py-2 px-4 rounded-sm text-sm font-normal',
+        className
+      )}
       onClick={onClick}
       ref={ref}
     >
@@ -58,7 +61,7 @@ export default function DateRangePicker({ setFilterParams }: Props) {
   };
 
   return (
-    <div>
+    <div className="flex flex-col justify-start items-start w-full md:w-fit">
       <DatePicker
         selectsRange
         isClearable

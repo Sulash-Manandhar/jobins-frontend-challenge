@@ -27,9 +27,9 @@ export default function UserOrderFilterBar({ filterParams, setFilterParams }: Pr
   };
 
   return (
-    <div className="flex flex-row items-center justify-between">
-      <div className="flex gap-2.5 items-center">
-        <div className="flex flex-row items-center gap-0 bg-white py-2 px-4 rounded-sm">
+    <div className="flex flex-col gap-4 md:flex-row items-center justify-between w-full">
+      <div className="w-full flex items-start flex-col gap-4 md:flex-row md:gap-2.5 md:items-center">
+        <div className="w-full md:w-fit flex flex-row items-center gap-0 bg-white py-2 px-4 rounded-sm">
           <label htmlFor="status" className="text-muted text-sm">
             Status:
           </label>
@@ -38,7 +38,7 @@ export default function UserOrderFilterBar({ filterParams, setFilterParams }: Pr
             id="status"
             value={filterParams.status}
             onChange={onSelectChange}
-            className="text-muted w-18 text-sm truncate"
+            className="text-muted w-full lg:w-18 text-sm truncate"
           >
             <option value={undefined} className="text-sm text-muted">
               All
@@ -51,7 +51,7 @@ export default function UserOrderFilterBar({ filterParams, setFilterParams }: Pr
             </option>
           </select>
         </div>
-        <div className="relative bg-white py-2 px-4 rounded-sm">
+        <div className="w-full relative bg-white py-1.5 px-4 rounded-sm md:w-fit">
           <input
             id="q"
             type="text"
@@ -59,7 +59,7 @@ export default function UserOrderFilterBar({ filterParams, setFilterParams }: Pr
             aria-label="Search orders"
             value={filterParams.q}
             onChange={(e) => onDebounceInputChange(e.currentTarget.value)}
-            className="text-sm focus:outline-none"
+            className="w-full text-sm focus:outline-none placeholder:text-sm"
           />
 
           <FaSearch

@@ -97,24 +97,26 @@ export default function UserOrderTable() {
     <div className="flex flex-col gap-5.5">
       <UserOrderFilterBar filterParams={filterParams} setFilterParams={setFilterParams} />
 
-      <Card className="flex flex-col items-start justify-start w-full p-0 rounded-2xl rounded-b-none ">
-        <Table className="w-full">
-          <TableHeader>
-            <TableRow>
-              <TableHead>ID</TableHead>
-              <TableHead>Customer</TableHead>
-              <TableHead>Date</TableHead>
-              <TableHead>Total</TableHead>
-              <TableHead>Method</TableHead>
-              <TableHead>Status</TableHead>
-              <TableHead>Action</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            <RenderTableBody data={queryData} />
-          </TableBody>
-        </Table>
-        <div className="bg-white p-2 rounded-2xl rounded-t-none w-full  shadow-sm px-6 py-4 flex items-center justify-between">
+      <Card className="flex flex-col items-start justify-start w-full p-0 rounded-2xl rounded-b-none">
+        <div className="overflow-scroll w-full">
+          <Table className="w-full">
+            <TableHeader>
+              <TableRow>
+                <TableHead>ID</TableHead>
+                <TableHead>Customer</TableHead>
+                <TableHead>Date</TableHead>
+                <TableHead>Total</TableHead>
+                <TableHead>Method</TableHead>
+                <TableHead>Status</TableHead>
+                <TableHead>Action</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <RenderTableBody data={queryData} />
+            </TableBody>
+          </Table>
+        </div>
+        <div className="bg-white p-2 rounded-2xl rounded-t-none w-full  shadow-sm px-6 py-4 flex flex-col gap-4 sm:flex-row items-center justify-between">
           <PageLimit
             filterParams={filterParams}
             setFilterParams={setFilterParams}

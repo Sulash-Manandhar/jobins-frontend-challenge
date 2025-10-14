@@ -6,5 +6,7 @@ type Props = {
   className?: string;
 };
 export default function Card({ children, className }: Props) {
-  return <div className={cn('bg-white p-6 flex justify-center items-center rounded-2xl', className)}>{children}</div>;
+  return (
+    <div className={cn('bg-white p-6 flex lg:justify-center lg:items-center rounded-2xl', className)}>{children}</div>
+  );
 }

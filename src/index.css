@@ -79,3 +79,11 @@ button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+.react-datepicker-wrapper {
+  width: 100%;
+
+  @media (width >= 48rem /* 768px */) {
+    width: fit-content;
+  }
+}
