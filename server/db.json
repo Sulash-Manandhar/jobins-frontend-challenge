@@ -4,7 +4,7 @@
       "id": 5089,
       "customer": "Joseph Wheeler",
       "date": "2025-10-07T00:00:00Z",
-      "total": 2.5,
+      "total": 1250.75,
       "method": "CC",
       "status": "pending"
     },
@@ -12,7 +12,7 @@
       "id": 5090,
       "customer": "Bane",
       "date": "2025-10-08T00:00:00Z",
-      "total": 3.0,
+      "total": 89.99,
       "method": "PayPal",
       "status": "completed"
     },
@@ -20,7 +20,7 @@
       "id": 5091,
       "customer": "Joseph Wheeler",
       "date": "2025-10-09T00:00:00Z",
-      "total": 2.75,
+      "total": 315.2,
       "method": "Bank",
       "status": "canceled"
     },
@@ -28,7 +28,7 @@
       "id": 5092,
       "customer": "Joseph Wheeler",
       "date": "2025-10-10T00:00:00Z",
-      "total": 2.25,
+      "total": 45.5,
       "method": "CC",
       "status": "pending"
     },
@@ -36,7 +36,7 @@
       "id": 5093,
       "customer": "Joseph Wheeler",
       "date": "2025-10-11T00:00:00Z",
-      "total": 3.5,
+      "total": 2100.0,
       "method": "PayPal",
       "status": "completed"
     },
@@ -44,7 +44,7 @@
       "id": 5094,
       "customer": "Joseph Wheeler",
       "date": "2025-10-12T00:00:00Z",
-      "total": 2.8,
+      "total": 127.65,
       "method": "Bank",
       "status": "canceled"
     },
@@ -52,7 +52,7 @@
       "id": 5095,
       "customer": "Joseph Wheeler",
       "date": "2025-10-13T00:00:00Z",
-      "total": 2.9,
+      "total": 560.3,
       "method": "CC",
       "status": "pending"
     },
@@ -60,7 +60,7 @@
       "id": 5096,
       "customer": "Joseph Wheeler",
       "date": "2025-10-14T00:00:00Z",
-      "total": 3.1,
+      "total": 99.95,
       "method": "PayPal",
       "status": "completed"
     },
@@ -68,7 +68,7 @@
       "id": 5097,
       "customer": "Joseph Wheeler",
       "date": "2025-10-15T00:00:00Z",
-      "total": 2.6,
+      "total": 3400.25,
       "method": "Bank",
       "status": "canceled"
     },
@@ -76,7 +76,7 @@
       "id": 5098,
       "customer": "Joseph Wheeler",
       "date": "2025-10-16T00:00:00Z",
-      "total": 3.3,
+      "total": 76.8,
       "method": "CC",
       "status": "pending"
     },
@@ -84,7 +84,7 @@
       "id": 5099,
       "customer": "Joseph Wheeler",
       "date": "2025-10-17T00:00:00Z",
-      "total": 2.95,
+      "total": 1500.45,
       "method": "PayPal",
       "status": "completed"
     },
@@ -92,7 +92,7 @@
       "id": 5100,
       "customer": "Joseph Wheeler",
       "date": "2025-10-18T00:00:00Z",
-      "total": 2.7,
+      "total": 234.1,
       "method": "Bank",
       "status": "canceled"
     },
@@ -100,7 +100,7 @@
       "id": 5101,
       "customer": "Joseph Wheeler",
       "date": "2025-10-19T00:00:00Z",
-      "total": 3.15,
+      "total": 88.7,
       "method": "CC",
       "status": "pending"
     },
@@ -108,7 +108,7 @@
       "id": 5102,
       "customer": "Joseph Wheeler",
       "date": "2025-10-20T00:00:00Z",
-      "total": 2.85,
+      "total": 2750.9,
       "method": "PayPal",
       "status": "completed"
     },
@@ -116,7 +116,7 @@
       "id": 5103,
       "customer": "Joseph Wheeler",
       "date": "2025-10-21T00:00:00Z",
-      "total": 3.4,
+      "total": 412.6,
       "method": "Bank",
       "status": "canceled"
     }
